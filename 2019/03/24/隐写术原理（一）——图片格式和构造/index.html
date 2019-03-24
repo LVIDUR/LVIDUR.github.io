@@ -96,26 +96,24 @@
 
 
 
-  <meta name="description" content="linux原理方面 ​    主要还是以看书为主，至于你说的和windows有什么不同。可以举个简单的例子感受一下其中的差距(这可能很笼统，不一定能让你认识区别，但还是可以察觉到一定的差距的)： ​    你比如说：在windows中你要重命名一万个.txt文件(如：把.txt.为后缀名的文件全改为.md的后缀名文件），在windows上你需要修改多久呢？而linux下只需要一条指令即可 rena">
+  <meta name="description" content="BMP（位图）​    BMP 是一种与硬件设备无关的图像文件格式，使用非常广。它采用位映射存储格式，除了图像深度可选以外，不采用其他任何压缩，因此，BMP文件所占用的空间很大。BMP文件的图像深度可选lbit、4bit、8bit及24bit。BMP文件存储数据时，图像的扫描方式是按从左到右、从下到上的顺序。 ​    BMP不支持压缩。 JEPG​    联合照片专家组（外语简称JEG外语全称：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/03/18/如何学linux？/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/隐写术原理（一）——图片格式和构造/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="linux原理方面 ​    主要还是以看书为主，至于你说的和windows有什么不同。可以举个简单的例子感受一下其中的差距(这可能很笼统，不一定能让你认识区别，但还是可以察觉到一定的差距的)： ​    你比如说：在windows中你要重命名一万个.txt文件(如：把.txt.为后缀名的文件全改为.md的后缀名文件），在windows上你需要修改多久呢？而linux下只需要一条指令即可 rena">
+<meta property="og:description" content="BMP（位图）​    BMP 是一种与硬件设备无关的图像文件格式，使用非常广。它采用位映射存储格式，除了图像深度可选以外，不采用其他任何压缩，因此，BMP文件所占用的空间很大。BMP文件的图像深度可选lbit、4bit、8bit及24bit。BMP文件存储数据时，图像的扫描方式是按从左到右、从下到上的顺序。 ​    BMP不支持压缩。 JEPG​    联合照片专家组（外语简称JEG外语全称：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://wx4.sinaimg.cn/large/006fVPCvly1g179swnczkj31800gln59.jpg">
-<meta property="og:updated_time" content="2019-03-18T14:17:49.578Z">
+<meta property="og:updated_time" content="2019-03-14T11:30:03.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="linux原理方面 ​    主要还是以看书为主，至于你说的和windows有什么不同。可以举个简单的例子感受一下其中的差距(这可能很笼统，不一定能让你认识区别，但还是可以察觉到一定的差距的)： ​    你比如说：在windows中你要重命名一万个.txt文件(如：把.txt.为后缀名的文件全改为.md的后缀名文件），在windows上你需要修改多久呢？而linux下只需要一条指令即可 rena">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/large/006fVPCvly1g179swnczkj31800gln59.jpg">
+<meta name="twitter:description" content="BMP（位图）​    BMP 是一种与硬件设备无关的图像文件格式，使用非常广。它采用位映射存储格式，除了图像深度可选以外，不采用其他任何压缩，因此，BMP文件所占用的空间很大。BMP文件的图像深度可选lbit、4bit、8bit及24bit。BMP文件存储数据时，图像的扫描方式是按从左到右、从下到上的顺序。 ​    BMP不支持压缩。 JEPG​    联合照片专家组（外语简称JEG外语全称：">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/18/如何学linux？/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/24/隐写术原理（一）——图片格式和构造/">
 
 
 
@@ -193,7 +191,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Navigationsleiste an/ausschalten">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -221,7 +219,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -238,7 +236,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
 
@@ -290,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/如何学linux？/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/隐写术原理（一）——图片格式和构造/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LVIDUR">
@@ -326,16 +324,32 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Erstellt: 2019-03-18 22:17:49" itemprop="dateCreated datePublished" datetime="2019-03-18T22:17:49+08:00">2019-03-18</time>
+              <time title="Created: 2019-03-24 16:46:07" itemprop="dateCreated datePublished" datetime="2019-03-24T16:46:07+08:00">2019-03-24</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-14 19:30:03" itemprop="dateModified" datetime="2019-03-14T19:30:03+08:00">2019-03-14</time>
+              
             
           </span>
 
@@ -368,27 +382,10 @@
       
 
       
-        <h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h4 id="原理方面"><a href="#原理方面" class="headerlink" title="原理方面"></a>原理方面</h4><hr>
-<p>​    <strong>主要还是以看书为主</strong>，至于你说的和windows有什么不同。可以举个简单的例子感受一下其中的差距(这可能很笼统，不一定能让你认识区别，但还是可以察觉到一定的差距的)：</p>
-<p>​    你比如说：在windows中你要重命名一万个.txt文件(如：把.txt.为后缀名的文件全改为.md的后缀名文件），在windows上你需要修改多久呢？而linux下只需要一条指令即可 rename  .txt .md *.txt。这指令就达到了修改当前目录下的所有后缀名为.txt的文件改为.md格式的文件。其实windows也可以用终端来改，但使用终端也不正体现了linux的强大之处了吗。</p>
-<p>​    建议使用centos7来学习linux。如果非要用Ubutu的话尽量使用terminal终端来学习，尽量用指令来操作，而不是直接操作可视化界面。先把linux的一些基本知识学会了，再去学大数据的知识，因为大数据需要基本linux的操作作为支撑。所以暂时也不用考虑大数据方面的。</p>
-<hr>
-<h4 id="一、以下主要罗列一些入门需要学到的知识"><a href="#一、以下主要罗列一些入门需要学到的知识" class="headerlink" title="一、以下主要罗列一些入门需要学到的知识"></a>一、以下主要罗列一些入门需要学到的知识</h4><p>1.linux入门的视频可以参考慕课网中的：</p>
-<p>1）<a href="https://www.imooc.com/learn/175" target="_blank" rel="noopener">https://www.imooc.com/learn/175</a></p>
-<p>​    这上面也谈到了linux的学习或者与windows之间的一些差别等。第一个视频中的第二章Linux系统安装你装过了就没必要再看了，会浪费时间，第四章文件搜索也可以不看，这个在后面使用的时候再具体根据需要百度即可。其余的基础指令、<strong>shell脚本</strong>（shell脚本还是很有趣的）基础是很有必要学一下的。</p>
-<p>2.理解linux中的目录结构，其中根目录很容易混淆。</p>
-<p>3.理解linux是一个多用户的平台，这就涉及到linux的权限，用户组等方面的知识。</p>
-<p>4.正则表达式。</p>
-<h4 id="二、常用软件"><a href="#二、常用软件" class="headerlink" title="二、常用软件"></a>二、常用软件</h4><p>1.vim编辑器</p>
-<p>​    Centos7的话直接使用yum install vim；</p>
-<p>​    需要掌握vim文本编辑器的基本操作，可以不需要啥都知道，基本的打开，保存，编辑，退出会就行，我这里也有一个关于vim的对应指令的思维导图(图片显示得很小，你可以复制下来看，或者用那个图片的连接下载就好)。磁盘管理和用户管理可以不看，所以其实第二个视频只是帮你了解一下vim这个编辑器而已。</p>
-<p><img src="http://wx4.sinaimg.cn/large/006fVPCvly1g179swnczkj31800gln59.jpg" alt></p>
-<p>2.emacs编辑器(Ubuntu)</p>
-<p>​    这两个编辑器其实不用花太多时间学习，只要会一些基础的就行。</p>
-<p>3.Java+Tomcat+Mysql+Nginx+Git的安装</p>
-<p>​    文章链接：<a href="http://michaeljian.top/2017/10/22/Centos7%E7%9A%84%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%EF%BC%88Java-Tomcat-Mysql-Nginx-Git%EF%BC%89/" target="_blank" rel="noopener">http://michaeljian.top/2017/10/22/Centos7%E7%9A%84%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%EF%BC%88Java-Tomcat-Mysql-Nginx-Git%EF%BC%89/</a></p>
-<p>​    这是我的学长写的一个文章，主要是java环境的安装，mysql数据库的安装，Nginx是web服务器负载均衡要用到的，可以了解一下，Git仓库的安装。这几个基本环境是一个服务器的基础。</p>
-<h4 id="三、后期的学习"><a href="#三、后期的学习" class="headerlink" title="三、后期的学习"></a>三、后期的学习</h4><p>​    先跟着视频学，多动手操作。后面等基础的没问题后再学习大数据方面的知识，到时候再给你说说大数据方面的内容吧。</p>
+        <h1 id="BMP（位图）"><a href="#BMP（位图）" class="headerlink" title="BMP（位图）"></a>BMP（位图）</h1><p>​    BMP 是一种与硬件设备无关的图像文件格式，使用非常广。它采用位映射存储格式，除了图像深度可选以外，不采用其他任何压缩，因此，BMP文件所占用的空间很大。BMP文件的图像深度可选lbit、4bit、8bit及24bit。BMP文件存储数据时，图像的扫描方式是按从左到右、从下到上的顺序。</p>
+<p>​    BMP不支持压缩。</p>
+<h1 id="JEPG"><a href="#JEPG" class="headerlink" title="JEPG"></a>JEPG</h1><p>​    联合照片专家组（外语简称JEG外语全称：JEG外语全称：Joint Photographic Expert Group）JPEG也是最常见的一种图像格式，它是由联合照片专家组（外语全称：Joint Photographic Experts Group），文件后辍名为”．jpg”或”．jpeg”，是最常用的图像文件格式，由一个软件开发联合会组织制定，是一种有损压缩格式，能够将图像压缩在很小的储存空间，图像中重复或不重要的资料会被丢失，因此容易造成图像数据的损伤。尤其是使用过高的压缩比例，将使最终解压缩后恢复的图像质量明显降低，如果追求高品质图像，不宜采用过高压缩比例。但是JPEG压缩技术十分先进，它用有损压缩方式去除冗余的图像数据，在获得极高的压缩率的同时能展现十分丰富生动的图像，换句话说，就是可以用最少的磁盘空间得到较好的图像品质。而且 JPEG是一种很灵活的格式，具有调节图像质量的功能，允许用不同的压缩比例对文件进行压缩，支持多种压缩级别，压缩比率通常在10：1到40：1之间，压缩比越大，品质就越低；相反地，压缩比越小，品质就越好。比如可以把1．37Mb的BMP位图文件压缩至20．3KB。当然也可以在图像质量和文件尺寸之间找到平衡点。JPEG格式压缩的主要是高频信息，对色彩的信息保留较好，适合应用于互联网，可减少图像的传输时间，可以支持24bit真彩色，也普遍应用于需要连续色调的图像。</p>
+<h1 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h1><p>​    图形交换格式（外语简称：GIF、外语全称：Graphics Interchange Format），是CompuServe公司在 1987年开发的图像文件格式。GIF文件的数据，是一种基于LZW算法的连续色调的无损压缩格式。其压缩率一般在50%左右，它不属于任何应用程序。几乎所有相关软件都支持它，公共领域有大量的软件在使用GIF图像文件。GIF图像文件的数据是经过压缩的，而且是采用了可变长度等压缩算法。所以GIF的图像深度从lbit到8bit，也即GIF最多支持256种色彩的图像。GIF格式的另一个特点是其在一个GIF文件中可以存多幅彩色图像，如果把存于一个文件中的多幅图像数据逐幅读出并显示到屏幕上，就可构成一种最简单的动画。GIF解码较快，因为采用隔行存放的GIF图像，在边解码边显示的时候可分成四遍扫描。第一遍扫描虽然只显示了整个图像的八分之一，第二遍的扫描后也只显示了1/4，但这已经把整幅图像的概貌显示出来了。在显示GIF图像时，隔行存放的图像会给您感觉到它的显示速度似乎要比其他图像快一些，这是隔行存放的优点；另外，GIF不支持Alpha透明通道。</p>
 
       
     </div>
@@ -415,6 +412,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/24/关于CTF学习的规划与资源/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -457,10 +470,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -480,8 +493,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -522,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-number">1.</span> <span class="nav-text">linux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理方面"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">原理方面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、以下主要罗列一些入门需要学到的知识"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">一、以下主要罗列一些入门需要学到的知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、常用软件"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">二、常用软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、后期的学习"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">三、后期的学习</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BMP（位图）"><span class="nav-number">1.</span> <span class="nav-text">BMP（位图）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JEPG"><span class="nav-number">2.</span> <span class="nav-text">JEPG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GIF"><span class="nav-number">3.</span> <span class="nav-text">GIF</span></a></li></ol></div>
             
 
           </div>
@@ -555,7 +568,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -563,7 +576,7 @@
 
 
 
-  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
 
 
 
