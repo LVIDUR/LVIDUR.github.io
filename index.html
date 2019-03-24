@@ -188,7 +188,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="Navigationsleiste an/ausschalten">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -216,7 +216,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
 
   </li>
         
@@ -233,7 +233,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
 
   </li>
 
@@ -285,6 +285,339 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/《现代密码学》笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LVIDUR">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/24/《现代密码学》笔记/" class="post-title-link" itemprop="url">密码学笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-03-24 17:01:12 / Geändert am: 17:08:09" itemprop="dateCreated datePublished" datetime="2019-03-24T17:01:12+08:00">2019-03-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>​    发送方使用密匙加密（或混合）消息，接收方收到后使用<strong>相同的</strong>密匙解密（或“去混合”）来恢复消息。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>​    使用相同的密匙。</p>
+<h4 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h4><p>​    若如果一方通过公共通道简单地发送密匙给另一方，窃听者将也能获得密匙。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ol>
+<li>磁盘加密中对同一个用户（在不同的时间点）使用固定的密匙来读写磁盘。</li>
+</ol>
+<h4 id="加密语法"><a href="#加密语法" class="headerlink" title="加密语法"></a>加密语法</h4><p>​    对称密匙加密方案由三个算法组成：密匙产生，加密，解密。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.密匙产生算法Gen是一个概率算法能够根据方案定义的某种分布选择并输出一个密匙k。</span><br><span class="line">2.加密算法Enc,输入为密匙k和明文m,输出为密文c。记为Enck(m)。</span><br><span class="line">3.解密算法Dec。记为Deck(c)。</span><br></pre></td></tr></table></figure>
+<p>​    密匙产生函数输出的所有可能的密匙称为<strong>密匙空间</strong>，用<strong>K</strong>表示。所有“合法”消息（也就是那些被加密算法支持的消息）的集合记作<strong>明文空间M</strong>。</p>
+<h4 id="密匙和kerckhoffs原则"><a href="#密匙和kerckhoffs原则" class="headerlink" title="密匙和kerckhoffs原则"></a>密匙和kerckhoffs原则</h4><blockquote>
+<p>kerckhoffs原则要求安全性仅依靠于密匙的安全性。</p>
+</blockquote>
+<h4 id="攻击场景"><a href="#攻击场景" class="headerlink" title="攻击场景"></a>攻击场景</h4><ol>
+<li>唯密文攻击（Ciphertext-only attack）:这是最基本的攻击方式，表示敌手只能观察到密文，（或者多个密文），并试图确定相应的明文（或多个明文）。</li>
+<li>已知明文攻击（Known-plaintext attack）:敌手学习一个或多个明文/密文对。目标是确定其他密文对应的明文。</li>
+<li>选择明文攻击（Chosen-plaintext attack）:这种攻击中，敌手能够选择明文，并得到相应的密文。试图确定其他密文对应的明文。</li>
+<li>选择密文攻击（Chosen-ciphertext attack）:敌手甚至可以选择密文并得到相应的明文。</li>
+</ol>
+<p>*前两种攻击在实际情况最为常见。第1种，敌手唯一需要做的事情就是窃听传输密文的公共通信线路。</p>
+<h2 id="古典加密术"><a href="#古典加密术" class="headerlink" title="古典加密术"></a>古典加密术</h2><h4 id="凯撒-Casear-加密"><a href="#凯撒-Casear-加密" class="headerlink" title="凯撒(Casear)加密"></a>凯撒(Casear)加密</h4><p>​    有记载的最古老的加密方法。通过移动三个位置的字母进行加密，如a对应d，b对应e……不过问题是：方法是固定的。形成的加密算法Gen过于简单（差不多什么都没干），即没有密匙。</p>
+<p>*凯撒算法变种——ROT-13（移动13个位置），被广泛应用于很多在线论坛中。</p>
+<h4 id="移位加密以及充分密匙空间原则"><a href="#移位加密以及充分密匙空间原则" class="headerlink" title="移位加密以及充分密匙空间原则"></a>移位加密以及充分密匙空间原则</h4><blockquote>
+<p>任何安全的加密方案必须拥有一个能够抵御穷举搜索的密匙空间。</p>
+</blockquote>
+<p>​    凯撒算法中的移位加密，由于只有26个密匙，便可以通过穷举攻击（或叫蛮力攻击）破解。在当前这个年代，穷举搜索可能使用非常强大的计算机，或者使用分布在世界各地的上千台PC机。因而可能的密匙数量必须非常多（至少2^60或者2^70）。</p>
+<h4 id="单字母替换-substitution"><a href="#单字母替换-substitution" class="headerlink" title="单字母替换(substitution)"></a>单字母替换(substitution)</h4><p>​    移位加密映射每一个明文字符到一个不同的密文字符，但是在每种情况下映射有相同的移位。单字母替换的思想是映射到每一个明文字符到一个不同的密文字符，以一种任意确认的方式，只要映射是一一对应的以确保能够保密。如果用英文字母表，密匙空间由多个字母置换形成，意味着密匙空间的规模为26！（26的阶乘，约为2^88）</p>
+<p>*不过这种加密算法有两点特性会被攻击者利用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.这种加密方法中，每个字符的映射是固定的，因此如果e映射到D，那么每一次e在明文中出现时，D就在密文中出现。</span><br><span class="line">2.英语（或者其他语言）中单个字母中单个字母出现的概率分布是已知的。也就是说不同英文字母在不同文本出翔的概率通常一样。当然，文本越长，越接近平均值。</span><br></pre></td></tr></table></figure>
+<h4 id="一种对移位加密改进的攻击"><a href="#一种对移位加密改进的攻击" class="headerlink" title="一种对移位加密改进的攻击"></a>一种对移位加密改进的攻击</h4><h4 id="多字母移位加密"><a href="#多字母移位加密" class="headerlink" title="多字母移位加密"></a>多字母移位加密</h4><p>​    将相同的明文字符映射到不同的密文字符。如：e有时映射到G，有时映射到P……这样可以使密文字符的出现频率“均匀平滑化”，来消除利用概率来进行的攻击。</p>
+<h4 id="破解多字母加密"><a href="#破解多字母加密" class="headerlink" title="破解多字母加密"></a>破解多字母加密</h4><p>​    若长度已知，则破解相对容易。特别的，若长度为t（周期），则密文可分为t部分每个部分可被视为单个移位加密。</p>
+<blockquote>
+<p>Kasisiki方法：</p>
+</blockquote>
+<h4 id="密文长度和密码分析攻击"><a href="#密文长度和密码分析攻击" class="headerlink" title="密文长度和密码分析攻击"></a>密文长度和密码分析攻击</h4><h2 id="完善保密加密"><a href="#完善保密加密" class="headerlink" title="完善保密加密"></a>完善保密加密</h2><h4 id="基本概念及定义"><a href="#基本概念及定义" class="headerlink" title="基本概念及定义"></a>基本概念及定义</h4><p>（省略一大堆定义及解释）当明文和密文上的分布是独立的方案才是完善保密加密。</p>
+<h4 id="一次一密（Vernam加密）"><a href="#一次一密（Vernam加密）" class="headerlink" title="一次一密（Vernam加密）"></a>一次一密（Vernam加密）</h4><p><strong>定义：</strong>密匙、明文空间和密文空间都是二进制字符串且长度为L，密匙产生算法从这长度为L的二进制字符串中均匀分布选择一个二进制比特串K（2^L个串空间中任意一个被选中的概率都是2^-L）,将密匙K和要加密的明文m按位取异或，得到密文c。</p>
+<h4 id="完善保密的局限"><a href="#完善保密的局限" class="headerlink" title="完善保密的局限"></a>完善保密的局限</h4><p>​    所有完善保密加密方案的密匙空间至少要和明文空间一样大。如果密匙空间由固定长度的密匙组成，明文空间由固定长度的 明文组成，则意味着密匙至少要和明文一样长。另一个问题是密匙只能使用一次。</p>
+<h4 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h4><h1 id="对称密匙密码学"><a href="#对称密匙密码学" class="headerlink" title="对称密匙密码学"></a>对称密匙密码学</h1><h2 id="对称密匙加密以及伪随机性"><a href="#对称密匙加密以及伪随机性" class="headerlink" title="对称密匙加密以及伪随机性"></a>对称密匙加密以及伪随机性</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/二进制文件与(ASCII)文本文件的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LVIDUR">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/24/二进制文件与(ASCII)文本文件的区别/" class="post-title-link" itemprop="url">二进制文件和文本文件的区别</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-03-24 17:01:12 / Geändert am: 17:02:31" itemprop="dateCreated datePublished" datetime="2019-03-24T17:01:12+08:00">2019-03-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>计算机文件基本上分为二种：二进制文件和 ASCII（也称纯文本文件），图形文件及文字处理程序等计算机程序都属于二进制文件。这些文件含有特殊的格式及计算机代码。ASCII 则是可以用任何文字处理程序阅读的简单文本文件。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>​    广义的二进制文件即指文件，由文件在外部设备的存放形式为二进制而得名。狭义的二进制文件即除文本文件以外的文件。文本文件是一种由很多行字符构成的计算机文件。文本文件存在于计算机系统中，通常在文本文件最后一行放置文件结束标志。文本文件的编码基于字符定长，译码相对要容易一些；二进制文件编码是变长的，灵活利用率要高，而译码要难一些，不同的二进制文件译码方式是不同的。<br>​    从本质上来说他们之间没有什么区别，因为他们在硬盘上都有一种的存放方式–二进制，但是如果要对他们有些区分的话，那可以这样理解。每个字符由一个或多个字节组成，每个字节都是用的-128—127之间的部分数值来表示的，也就是说，-128——127之间还有一些数据没有对应任何字符的任何字节。如果一个文件中的每个字节的内容都是可以表示成字符的数据，我们就可以称这个文件为文本文件，可见，文本文件只是二进制文件中的一种特例，为了与文本文件相区别，人们又把除了文本文件以外的文件称为二进制文件，由于很难严格区分文本文件和二进制文件的概念，所以我们可以简单地认为，如果一个文件专门用于存储文本字符的数据，没有包含字符以外的其他数据，我们就称之为文本文件，除此之外的文件就是二进制文件。</p>
+<h2 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h2><ol>
+<li>能存储的的数据类型不同。文本文件只能存储char型字符变量。二进制文件可以存储char/int/short/long/float/……各种变量值。</li>
+<li>每条数据的长度。文本文件每条数据通常是固定长度的。以ASCII为例，每条数据(每个字符)都是1个字节。进制文件每条数据不固定。如short占两个字节，int占四个字节，float占8个字节……</li>
+<li>读取的软件不同 。文本文件编辑器就可以读写。比如记事本、NotePad++、Vim等。二进制文件需要特别的解码器。比如bmp文件需要图像查看器，rmvb需要播放器……</li>
+<li>操作系统对换行符(‘\n’)的处理不同（不重要） 。文本文件，操作系统会对’\n’进行一些隐式变换，因此文本文件直接跨平台使用会出问题。 在Windows下，写入’\n’时，操作系统会隐式的将’\n’转换为”\r\n”，再写入到文件中；读的时候，会把“\r\n”隐式转化为’\n’，再读到变量中。 在Linux下，写入’\n’时，操作系统不做隐式变换。 二进制文件，操作系统不会对’\n’进行隐式变换，很多二进制文件（如电影、图片等）可以跨平台使用。</li>
+</ol>
+<h2 id="二者的存取"><a href="#二者的存取" class="headerlink" title="二者的存取"></a>二者的存取</h2><h2 id="使用二进制文件的好处"><a href="#使用二进制文件的好处" class="headerlink" title="使用二进制文件的好处"></a>使用二进制文件的好处</h2><ul>
+<li>二进制文件比较节约空间，这两者储存字符型数据时并没有差别。但是在储存数字，特别是实型数字时，二进制更节省空间，比如储存 Real*4 的数据：3.1415927，文本文件需要 9 个字节，分别储存：3 . 1 4 1 5 9 2 7 这 9 个 ASCII 值，而二进制文件只需要 4 个字节（DB 0F 49 40）</li>
+<li>内存中参加计算的数据都是用二进制无格式储存起来的，因此，使用二进制储存到文件就更快捷。如果储存为文本文件，则需要一个转换的过程。在数据量很大的时候，两者就会有明显的速度差别了。</li>
+<li>一些比较精确的数据，使用二进制储存不会造成有效位的丢失。</li>
+</ul>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/隐写术原理（一）——图片格式和构造/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -305,7 +638,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/24/隐写术原理（一）——图片格式和构造/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/03/24/隐写术原理（一）——图片格式和构造/" class="post-title-link" itemprop="url">图片格式构造</a>
               
             
           </h1>
@@ -323,31 +656,19 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-03-24 16:46:07" itemprop="dateCreated datePublished" datetime="2019-03-24T16:46:07+08:00">2019-03-24</time>
+              <time title="Erstellt: 2019-03-24 17:01:12 / Geändert am: 17:07:33" itemprop="dateCreated datePublished" datetime="2019-03-24T17:01:12+08:00">2019-03-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-14 19:30:03" itemprop="dateModified" datetime="2019-03-14T19:30:03+08:00">2019-03-14</time>
               
             
           </span>
@@ -463,7 +784,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/24/关于CTF学习的规划与资源/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/03/24/关于CTF学习的规划与资源/" class="post-title-link" itemprop="url">CTF赛制和资料</a>
               
             
           </h1>
@@ -481,31 +802,19 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-03-24 16:43:38" itemprop="dateCreated datePublished" datetime="2019-03-24T16:43:38+08:00">2019-03-24</time>
+              <time title="Erstellt: 2019-03-24 17:01:12 / Geändert am: 17:03:08" itemprop="dateCreated datePublished" datetime="2019-03-24T17:01:12+08:00">2019-03-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-12 10:21:00" itemprop="dateModified" datetime="2019-01-12T10:21:00+08:00">2019-01-12</time>
               
             
           </span>
@@ -673,8 +982,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -731,7 +1040,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -739,7 +1048,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
 
 
 
